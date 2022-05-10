@@ -81,6 +81,12 @@ typedef struct SRSRAN_API {
 
 } srsran_pbch_t;
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 SRSRAN_API int srsran_pbch_init(srsran_pbch_t* q);
 
 SRSRAN_API void srsran_pbch_free(srsran_pbch_t* q);
@@ -104,5 +110,9 @@ SRSRAN_API void srsran_pbch_decode_reset(srsran_pbch_t* q);
 SRSRAN_API void srsran_pbch_mib_unpack(uint8_t* msg, srsran_cell_t* cell, uint32_t* sfn);
 
 SRSRAN_API void srsran_pbch_mib_pack(srsran_cell_t* cell, uint32_t sfn, uint8_t* msg);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_PBCH_H

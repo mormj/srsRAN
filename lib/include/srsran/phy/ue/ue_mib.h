@@ -73,6 +73,10 @@ typedef struct SRSRAN_API {
   uint32_t frame_cnt;
 } srsran_ue_mib_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_ue_mib_init(srsran_ue_mib_t* q, cf_t* in_buffer, uint32_t max_prb);
 
 SRSRAN_API void srsran_ue_mib_free(srsran_ue_mib_t* q);
@@ -115,6 +119,10 @@ SRSRAN_API int srsran_ue_mib_sync_decode(srsran_ue_mib_sync_t* q,
                                          uint8_t               bch_payload[SRSRAN_BCH_PAYLOAD_LEN],
                                          uint32_t*             nof_tx_ports,
                                          int*                  sfn_offset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_UE_MIB_H
 

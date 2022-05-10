@@ -149,6 +149,10 @@ typedef struct SRSRAN_API {
   #endif
 } srsran_ue_sync_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_ue_sync_init(srsran_ue_sync_t* q,
                                    uint32_t          max_prb,
                                    bool              search_cell,
@@ -270,6 +274,10 @@ SRSRAN_API int srsran_ue_sync_run_find_gnss_mode(srsran_ue_sync_t* q,
 SRSRAN_API int srsran_ue_sync_run_track_gnss_mode(srsran_ue_sync_t* q, cf_t* input_buffer[SRSRAN_MAX_CHANNELS]);
 
 SRSRAN_API int srsran_ue_sync_set_tti_from_timestamp(srsran_ue_sync_t* q, srsran_timestamp_t* rx_timestamp);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_UE_SYNC_H
 
