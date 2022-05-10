@@ -76,6 +76,10 @@ typedef struct SRSRAN_API {
   srsran_ue_cellsearch_result_t* candidates;
 } srsran_ue_cellsearch_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_ue_cellsearch_init(srsran_ue_cellsearch_t* q,
                                          uint32_t                max_frames_total,
                                          int(recv_callback)(void*, void*, uint32_t, srsran_timestamp_t*),
@@ -100,6 +104,10 @@ SRSRAN_API int srsran_ue_cellsearch_scan(srsran_ue_cellsearch_t*       q,
 SRSRAN_API int srsran_ue_cellsearch_set_nof_valid_frames(srsran_ue_cellsearch_t* q, uint32_t nof_frames);
 
 SRSRAN_API void srsran_set_detect_cp(srsran_ue_cellsearch_t* q, bool enable);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_UE_CELL_SEARCH_H
 

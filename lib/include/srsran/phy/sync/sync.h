@@ -132,6 +132,10 @@ typedef enum {
   SRSRAN_SYNC_ERROR         = -1
 } srsran_sync_find_ret_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_sync_init(srsran_sync_t* q, uint32_t frame_size, uint32_t max_offset, uint32_t fft_size);
 
 SRSRAN_API int
@@ -222,5 +226,9 @@ SRSRAN_API bool srsran_sync_sss_available(srsran_sync_t* q);
 
 /* Enables/Disables CP detection  */
 SRSRAN_API void srsran_sync_cp_en(srsran_sync_t* q, bool enabled);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_SYNC_H

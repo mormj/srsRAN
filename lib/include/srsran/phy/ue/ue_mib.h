@@ -98,6 +98,10 @@ typedef struct {
   uint32_t         nof_rx_channels;
 } srsran_ue_mib_sync_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int
 srsran_ue_mib_sync_init_multi(srsran_ue_mib_sync_t* q,
                               int(recv_callback)(void*, cf_t* [SRSRAN_MAX_CHANNELS], uint32_t, srsran_timestamp_t*),
@@ -115,6 +119,10 @@ SRSRAN_API int srsran_ue_mib_sync_decode(srsran_ue_mib_sync_t* q,
                                          uint8_t               bch_payload[SRSRAN_BCH_PAYLOAD_LEN],
                                          uint32_t*             nof_tx_ports,
                                          int*                  sfn_offset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_UE_MIB_H
 
