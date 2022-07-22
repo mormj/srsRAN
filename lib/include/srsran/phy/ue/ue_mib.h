@@ -102,6 +102,10 @@ typedef struct {
   uint32_t         nof_rx_channels;
 } srsran_ue_mib_sync_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int
 srsran_ue_mib_sync_init_multi(srsran_ue_mib_sync_t* q,
                               int(recv_callback)(void*, cf_t* [SRSRAN_MAX_CHANNELS], uint32_t, srsran_timestamp_t*),
