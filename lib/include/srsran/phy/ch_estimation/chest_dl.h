@@ -135,6 +135,10 @@ typedef struct SRSRAN_API {
 
 } srsran_chest_dl_cfg_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_chest_dl_init(srsran_chest_dl_t* q, uint32_t max_prb, uint32_t nof_rx_antennas);
 
 SRSRAN_API void srsran_chest_dl_free(srsran_chest_dl_t* q);
@@ -168,5 +172,9 @@ SRSRAN_API int srsran_chest_dl_estimate_cfg(srsran_chest_dl_t*     q,
                                             srsran_chest_dl_res_t* res);
 
 SRSRAN_API srsran_chest_dl_estimator_alg_t srsran_chest_dl_str2estimator_alg(const char* str);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_CHEST_DL_H

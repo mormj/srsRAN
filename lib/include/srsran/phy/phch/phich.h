@@ -95,6 +95,10 @@ typedef struct SRSRAN_API {
   float distance;
 } srsran_phich_res_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_phich_init(srsran_phich_t* q, uint32_t nof_rx_antennas);
 
 SRSRAN_API void srsran_phich_free(srsran_phich_t* q);
@@ -123,5 +127,9 @@ SRSRAN_API void srsran_phich_reset(srsran_phich_t* q, cf_t* slot_symbols[SRSRAN_
 SRSRAN_API uint32_t srsran_phich_ngroups(srsran_phich_t* q);
 
 SRSRAN_API uint32_t srsran_phich_nsf(srsran_phich_t* q);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_PHICH_H

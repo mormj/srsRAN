@@ -75,6 +75,10 @@ typedef struct SRSRAN_API {
 
 } srsran_pdcch_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_pdcch_init_ue(srsran_pdcch_t* q, uint32_t max_prb, uint32_t nof_rx_antennas);
 
 SRSRAN_API int srsran_pdcch_init_enb(srsran_pdcch_t* q, uint32_t max_prb);
@@ -150,5 +154,10 @@ SRSRAN_API uint32_t srsran_pdcch_common_locations(srsran_pdcch_t*        q,
 SRSRAN_API uint32_t srsran_pdcch_common_locations_ncce(uint32_t               nof_cce,
                                                        srsran_dci_location_t* c,
                                                        uint32_t               max_candidates);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_PDCCH_H

@@ -77,6 +77,10 @@ typedef struct SRSRAN_API {
 
 #define SRSRAN_RA_NOF_TBS_IDX 34
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API uint32_t srsran_ra_type0_P(uint32_t nof_prb);
 
 SRSRAN_API uint32_t srsran_ra_type2_n_vrb_dl(uint32_t nof_prb, bool ngap_is_1);
@@ -103,5 +107,9 @@ SRSRAN_API int srsran_ra_mcs_from_tbs_idx(uint32_t tbs_idx, bool use_tbs_index_a
 SRSRAN_API int srsran_ra_tbs_from_idx(uint32_t tbs_idx, uint32_t n_prb);
 
 SRSRAN_API int srsran_ra_tbs_to_table_idx(uint32_t tbs, uint32_t n_prb, uint32_t max_tbs_idx);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_RA_H

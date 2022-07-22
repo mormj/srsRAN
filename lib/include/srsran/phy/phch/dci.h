@@ -186,6 +186,10 @@ typedef struct SRSRAN_API {
   bool     hopping_flag;
 } srsran_dci_rar_grant_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API void srsran_dci_rar_unpack(uint8_t payload[SRSRAN_RAR_GRANT_LEN], srsran_dci_rar_grant_t* rar);
 
 SRSRAN_API void srsran_dci_rar_pack(srsran_dci_rar_grant_t* rar, uint8_t payload[SRSRAN_RAR_GRANT_LEN]);
@@ -247,5 +251,9 @@ SRSRAN_API bool srsran_dci_location_isvalid(srsran_dci_location_t* c);
 SRSRAN_API void srsran_dci_cfg_set_common_ss(srsran_dci_cfg_t* cfg);
 
 SRSRAN_API uint32_t srsran_dci_format_max_tb(srsran_dci_format_t format);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // DCI_

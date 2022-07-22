@@ -157,6 +157,10 @@ typedef struct {
   bool                            simul_cqi_ack_pucch3;
 } srsran_pdsch_ack_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int
 srsran_ue_dl_init(srsran_ue_dl_t* q, cf_t* input[SRSRAN_MAX_PORTS], uint32_t max_prb, uint32_t nof_rx_antennas);
 
@@ -243,5 +247,9 @@ SRSRAN_API int srsran_ue_dl_find_and_decode(srsran_ue_dl_t*     q,
                                             bool                acks[SRSRAN_MAX_CODEWORDS]);
 
 SRSRAN_API void srsran_ue_dl_save_signal(srsran_ue_dl_t* q, srsran_dl_sf_cfg_t* sf, srsran_pdsch_cfg_t* pdsch_cfg);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_UE_DL_H

@@ -90,6 +90,10 @@ typedef struct SRSRAN_API {
   srsran_cfr_t      tx_cfr; ///< Tx CFR object
 } srsran_ofdm_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @brief Initialises or reconfigures OFDM receiver
  *
@@ -149,5 +153,9 @@ SRSRAN_API int srsran_ofdm_set_phase_compensation(srsran_ofdm_t* q, double cente
 SRSRAN_API void srsran_ofdm_set_non_mbsfn_region(srsran_ofdm_t* q, uint8_t non_mbsfn_region);
 
 SRSRAN_API int srsran_ofdm_set_cfr(srsran_ofdm_t* q, srsran_cfr_cfg_t* cfr);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_OFDM_H

@@ -450,6 +450,7 @@ static int dci_blind_search(srsran_ue_dl_t*     q,
         }
 
         // Check if RNTI is matched
+        // printf("DCI_RNTI: %d\n", dci_msg[nof_dci].rnti);
         if ((dci_msg[nof_dci].rnti == rnti) && (dci_msg[nof_dci].nof_bits > 0)) {
           // Compute decoded message correlation to drastically reduce false alarm probability
           float corr = srsran_pdcch_msg_corr(&q->pdcch, &dci_msg[nof_dci]);

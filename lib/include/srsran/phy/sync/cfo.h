@@ -47,6 +47,10 @@ typedef struct SRSRAN_API {
   cf_t*            cur_cexp;
 } srsran_cfo_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_cfo_init(srsran_cfo_t* h, uint32_t nsamples);
 
 SRSRAN_API void srsran_cfo_free(srsran_cfo_t* h);
@@ -61,5 +65,9 @@ SRSRAN_API void
 srsran_cfo_correct_offset(srsran_cfo_t* h, const cf_t* input, cf_t* output, float freq, int cexp_offset, int nsamples);
 
 SRSRAN_API float srsran_cfo_est_corr_cp(cf_t* input_buffer, uint32_t nof_prb);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_CFO_H

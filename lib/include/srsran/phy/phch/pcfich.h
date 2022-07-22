@@ -74,6 +74,10 @@ typedef struct SRSRAN_API {
 
 } srsran_pcfich_t;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SRSRAN_API int srsran_pcfich_init(srsran_pcfich_t* q, uint32_t nof_rx_antennas);
 
 SRSRAN_API int srsran_pcfich_set_cell(srsran_pcfich_t* q, srsran_regs_t* regs, srsran_cell_t cell);
@@ -87,5 +91,9 @@ SRSRAN_API int srsran_pcfich_decode(srsran_pcfich_t*       q,
                                     float*                 corr_result);
 
 SRSRAN_API int srsran_pcfich_encode(srsran_pcfich_t* q, srsran_dl_sf_cfg_t* sf, cf_t* sf_symbols[SRSRAN_MAX_PORTS]);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SRSRAN_PCFICH_H
